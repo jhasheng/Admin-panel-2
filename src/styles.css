@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/*@import "../node_modules/ng2-flex-layout/dist/ng2-flex-layout.css";*/
+
+
+body {
+  margin: 0px;
+
+  font-family: 'Roboto', sans-serif;	
+}
+
+*{
+  -webkit-font-smoothing: antialased;
+  -moz-osx-font-smoothing: antialased;
+}
+
+
+
+
+
+
+
+md-sidenav-container{
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+md-sidenav {
+  max-width: 320px;
+}
+
+
+/* afta edo den ksero ama doulevoune */
+
+:host {
+  display: flex;
+  flex: 1;
+}
+
+md-sidenav-container{
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+md-sidenav {
+  max-width: 320px;
+}
+
+
+
+
+.preloader{
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
+
+
+
+
+
+.content{
+  padding: 10px;
+  /*min-height: 500px;*/
+}
+md-tab-group{
+  /*background: blue;*/
+}
+
+
+.tab-preview{
+  padding: 20px;
+  background: red;
+  min-height: 200px;
+}
+
+code{
+  min-height: 300px;
+}
+
+pre{
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ================================================================================ */
+
+

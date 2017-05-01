@@ -1,0 +1,74 @@
+<div fxLayout="column" fxFlex style="width:100%;" style="padding:10px;">
+
+  <md-spinner *ngIf="!loadComplete" class="preloader"></md-spinner>
+
+  <md-card fxFlex="100" fxLayoutGap="16px" style="padding:0px;">
+
+    <table class="table-toolbar"> 
+      <thead>
+        <tr *ngIf="prosforesSelected.length > 0 else gg" style="background: #673ab7;">
+          <th style="width:160px;"><span style="margin-left:20px; color:white;">{{prosforesSelectedCounter}} items selected</span></th>
+          <th><button md-raised-button style="margin-left:20px;" (click)="openDialogDeleteProsfora()">Delete</button></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <ng-template #gg>
+          <tr>
+            <!--<th><a href="#modal-form" class="btn blue " style="margin-left:20px;">new</a></th>-->
+            <th><button md-raised-button color="primary" (click)="openDialogAddProsfora()" style="margin-left:20px;">New</button></th>
+            <th></th> 
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </ng-template>
+      </thead>
+    </table>
+
+    <table id="prosfores-table">
+      <thead>
+        <tr>
+          <th>
+            <div style="height:22px; margin-left:20px;">
+              <md-checkbox color="primary" id="chk-all" [(ngModel)]="rootCheckBox" name="rootCheckBox"></md-checkbox>
+            </div>
+          </th>
+          <th class="">Title
+            <i (click)="sortTable(1)" class="material-icons sorting-icon">arrow_upward</i>
+          </th>
+          <th class="">Price<i (click)="sortTable(2)" class="material-icons sorting-icon">arrow_upward</i></th>
+          <th class="">Description<i (click)="sortTable(3)" class="material-icons sorting-icon">arrow_upward</i></th>
+          <th class="">Time Created<i (click)="sortTable(4)" class="material-icons sorting-icon">arrow_upward</i></th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let prosfora of prosfores">
+          <td style="width:50px;">
+            <div style="height:22px; margin-left:20px;">
+              <md-checkbox color="primary" id="{{prosfora.$key}}" (change)="statusCheckBox()"></md-checkbox>
+              <!--<input type="checkbox" id="chk-{{prosfora.$key}}" (change)="statusCheckBox()" />
+              <label for="chk-{{prosfora.$key}}"></label>-->
+            </div>
+          </td>
+          <td>
+            <a [routerLink]="['/prosfora/'+prosfora.$key]">{{ prosfora.title }}</a>
+          </td>
+          <td>{{ prosfora.price }}</td>
+          <td>{{ prosfora.description }}</td>
+          <td>{{ prosfora.time_updated.date }}</td>
+          <td><i class="material-icons red-circle" style="color:#2196f3; font-size:18px;">lens</i></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </md-card>
+
+</div>
+
+
+

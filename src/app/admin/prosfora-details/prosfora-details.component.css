@@ -1,0 +1,57 @@
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.example-card {
+  width: 300px;
+}
+
+
+.title{
+  text-align: center;
+}
+
+.description{
+  text-align: center;
+}
+
+.txt-center{
+  text-align: center;
+}
+
+
+
+
+
+.card-animation-test{
+  width: 400px;
+  height: 400px;
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  background: aliceblue;
+}
+
+.content-top{
+  width: 100%;
+  height: 45%;
+  background: blue;
+}
+
+.content-mid{
+  width: 100%;
+  height: 45%;
+  background: green;
+}
+
+.content-bot{
+  width: 100%;
+  height: 10%;
+  background: red;
+}
