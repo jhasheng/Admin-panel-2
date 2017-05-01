@@ -4,12 +4,12 @@ export const environment = {
 
   // Initialize Firebase
   firabaseConfig : {
-    apiKey: "AIzaSyAPNrMHXz0L2oiNWgc8GtgZRKQN1sxditw",
-    authDomain: "property-app-97420.firebaseapp.com",
-    databaseURL: "https://property-app-97420.firebaseio.com",
-    projectId: "property-app-97420",
-    storageBucket: "property-app-97420.appspot.com",
-    messagingSenderId: "430602558532"
+    apiKey: "AIzaSyApJkJSNjLSzvWWXjXXWrMoRY2PzURZ_xw",
+    authDomain: "admin-panel-2.firebaseapp.com",
+    databaseURL: "https://admin-panel-2.firebaseio.com",
+    projectId: "admin-panel-2",
+    storageBucket: "admin-panel-2.appspot.com",
+    messagingSenderId: "619980309166"
   }
 
 };
