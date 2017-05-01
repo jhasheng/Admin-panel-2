@@ -11,6 +11,8 @@ declare const $: any;
 })
 export class MainToolbarComponent implements OnInit {
 
+  isDarkTheme = false;
+
   email: any;
 
   constructor(public af: AngularFire, private router: Router) {

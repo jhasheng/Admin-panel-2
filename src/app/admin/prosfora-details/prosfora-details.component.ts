@@ -88,6 +88,8 @@ declare const $: any;
 })
 export class ProsforaDetailsComponent implements OnInit {
 
+  isDarkTheme = false;
+
   // animations part
   state: string = 'small';
   state2: string = 'small';

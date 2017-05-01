@@ -42,6 +42,7 @@ import { ProsforesTableComponent } from './admin/prosfores-table/prosfores-table
 import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-details.component';
 import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 
+import { HomeComponent } from './client/home/home.component';
 
 
 const firebaseAuthConfig = {
@@ -65,7 +66,8 @@ const firebaseAuthConfig = {
     MainToolbarComponent,
     ProsforesTableComponent,
     ProsforaDetailsComponent,
-    YpiresiesComponent
+    YpiresiesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

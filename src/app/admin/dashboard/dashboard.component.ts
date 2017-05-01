@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit {
     iconRegistry.addSvgIconSetInNamespace('avatars', avatarsSafeUrl);
   }
 
-  private openAdminDialog() {
+  public openAdminDialog() {
     this.dialog.open(DialogComponent).afterClosed()
       .filter(result => !!result)
       .subscribe(user => {

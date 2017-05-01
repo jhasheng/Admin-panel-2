@@ -14,6 +14,8 @@ declare const $: any;
 
 export class ProsforesComponent implements OnInit {
 
+  isDarkTheme = false;
+
   constructor() {
 
   }

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YpiresiesComponent implements OnInit {
 
+  isDarkTheme = false;
+
   constructor() { }
 
   ngOnInit() {
