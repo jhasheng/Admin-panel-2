@@ -20,14 +20,14 @@ declare const $: any;
         })),
         state('active', style({
             // transform: 'scale(1.2)',
-            position: 'absolute',
-            width: '800px',
-            height: '800px',
+            width: '100%',
+            height: '100%'
+            // position: 'fixed',
             // top: '0px',
-            // left: '0px'
+            // left: '0px',
         })),
-        transition('inactive => active', animate('150ms ease-in')),
-        transition('active => inactive', animate('150ms ease-in')),
+        transition('inactive => active', animate('300ms ease-in')),
+        transition('active => inactive', animate('300ms ease-in')),
     ]),
 
     trigger('topAnimation', [
@@ -36,14 +36,20 @@ declare const $: any;
         })),
         state('active', style({
           // transform: 'scale(1.2)',
-          // width: '100%',
-          // height: '100px'
-          position: 'absolute',
-          left: '200px',
-          top: '300px'
+          // position : 'fixed',
+          // transform: 'translate(0px, 0px)',
+          // top: '0px',
+          // left: '0px',
+          // backgroundColor: 'purple',
+          margin: '0px auto',
+          color : 'white',
+          width : '80%',
+          height : '80%',
+
+          
         })),
-        transition('inactive => active', animate('150ms ease-in')),
-        transition('active => inactive', animate('150ms ease-in')),
+        transition('inactive => active', animate('450ms ease-in')),
+        transition('active => inactive', animate('450ms ease-in')),
     ]),
 
     trigger('midAnimation', [
@@ -53,7 +59,11 @@ declare const $: any;
         })),
         state('active', style({
             // transform: 'scale(1.2)',
-            display: 'none'
+            // display: 'none'
+            position: 'fixed',
+            width: '80%',
+            top: '200px',
+            left: '10%',
 
         })),
         transition('inactive => active', animate('150ms ease-in')),
@@ -107,10 +117,10 @@ export class ProsforaDetailsComponent implements OnInit {
 
 
   animateMe() {
-      this.state = (this.state === 'inactive' ? 'active' : 'inactive');
-      this.state2 = (this.state2 === 'inactive' ? 'active' : 'inactive');
-      this.state3 = (this.state3 === 'inactive' ? 'active' : 'inactive');
-      this.state4 = (this.state4 === 'inactive' ? 'active' : 'inactive');
+      this.state = (this.state === 'active' ? 'inactive' : 'active');
+      this.state2 = (this.state2 === 'active' ? 'inactive' : 'active');
+      this.state3 = (this.state3 === 'active' ? 'inactive' : 'active');
+      this.state4 = (this.state4 === 'active' ? 'inactive' : 'active');
   }
 
   ngOnInit() {
