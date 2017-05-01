@@ -1,0 +1,187 @@
+<div class="main-container" fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100vw;">
+
+  <!-- main toolbar -->
+  <app-main-toolbar></app-main-toolbar>
+
+
+  <md-sidenav-container> 
+
+    <md-sidenav mode="side" opened>
+      <!-- menu left heare -->
+      <app-navigation-menu-left></app-navigation-menu-left>
+
+    </md-sidenav>
+
+    <!-- Table for prosfores -->
+    <!--<app-prosfores-table></app-prosfores-table>-->
+
+    <md-spinner *ngIf="!loadComplete" class="preloader"></md-spinner>
+
+    <!-- Iner sideNav  container -->
+    <md-sidenav-container style="">
+
+
+      <md-sidenav #sidenavInside mode="side" align="end" style="background:#fff; border-left: 1px solid lightgray; width:300px; padding:20px;">
+
+        <h4>Edit Prosfora</h4>
+
+        <form #form="ngForm" (ngSubmit)="getEditProsforaForm(form.value)" ngNativeValidate>
+          <div fxLayout="column" fxLayoutGap="8px">
+
+            <!--<div fxLayout="row" fxLayoutGap="10px" class="example-full-width">
+              
+            </div>-->
+
+            <div fxLayout="column" fxLayoutGap="8px" style="padding-right:20px;">
+              <input type="file" ngModel name="imagefile" class="dropify" data-height="200" />
+            </div>
+
+            <md-input-container class="example-full-width">
+              <input mdInput ngModel name="title" placeholder="Title" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input type="number" mdInput ngModel name="price" placeholder="Price" required>
+            </md-input-container>
+
+            <md-input-container>
+              <textarea mdInput ngModel name="smalDescription" placeholder="Description" rows="3" cols="60" required></textarea>
+            </md-input-container>
+
+            <md-input-container>
+              <textarea mdInput ngModel name="bigDescription" placeholder="Description" rows="5" cols="60" required></textarea>
+            </md-input-container>
+
+            <!--<div fxLayout="row" fxLayoutGap="24px">
+              <md-checkbox color="primary" ngModel name="isAdmin">Is Admin?</md-checkbox>
+              <md-checkbox color="primary" ngModel name="isCool">Is Cool?</md-checkbox>
+            </div>-->
+          </div>
+
+          <md-dialog-actions align="center" style="margin-top:50px;">
+            <div fxLayout="row" fxLayoutGap="10px">
+              <button md-button type="button" (click)="sidenavInside.close()">Cancel</button>
+              <button md-raised-button color="primary">Save</button>
+            </div>
+          </md-dialog-actions>
+
+        </form>
+
+      </md-sidenav>
+
+
+      <div class="example-sidenav-content">
+
+        <button md-button (click)="sidenavInside.toggle()">
+          Open sidenav
+        </button>
+
+        <!--<md-card class="example-card"  [@myAwesomeAnimation]='state' (click)="animateMe()">
+          <img (click)="sidenavInside.toggle()" md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+          <md-card-content [@myAwesomeAnimation2]='state2'> 
+            <div class="title">
+              <h3>Microsft 10</h3>
+            </div>
+            <div class="description">
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+              </p>
+            </div>
+          </md-card-content>
+          <md-card-actions class="txt-center" >
+            <button md-button>999€</button>
+          </md-card-actions>
+        </md-card>-->
+
+
+
+
+        <!--<md-card class="card-animation-test" [@myAwesomeAnimation]='state' (click)="animateMe()">
+          <div class="background" > 
+
+            <div class="content-top" [@topAnimation]='state2'></div>
+            <div class="content-mid" ></div>
+            <div class="content-bot" ></div>
+
+          </div>
+        </md-card>-->
+
+
+
+
+
+
+
+
+
+
+
+        <!--<div id="portfolio" class="cx gray">
+          <div class="db">
+            <div class="b e" style="">
+
+              <div class="d hx hf gu gallery-item gallery-expand ce polygon" style="">
+                <div class="placeholder">
+                  <div class="gallery-curve-wrapper">
+                    <a class="gallery-cover gray">
+                      <img class="responsive-img" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/geometric-aquamarine.jpg?12295265317662713736"
+                        alt="placeholder" crossorigin="anonymous">
+                    </a>
+                    <div class="gallery-header">
+                      <span>Aquamarine</span>
+                    </div>
+                    <div class="gallery-body">
+                      <div class="title-wrapper">
+                        <h3>Aquamarine</h3>
+                        <span class="gj">$29.99</span>
+                      </div>
+                      <p class="fi">
+                        Literally venmo before they sold out, DIY heirloom forage polaroid offal yr pop-up selfies health goth. Typewriter scenester
+                         portland small batch.</p>
+                      <p class="fi">
+                        Ea salvia adipisicing vegan man bun. Flexitarian cupidatat skateboard flannel. Drinking vinegar marfa you probably haven't
+                        heard of them consequat post-ironic, shabby chic williamsburg raclette vaporware readymade selfies
+                        .</p>
+
+                    </div>
+                    <div class="gallery-action">
+                      <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">favorite</i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+    </md-sidenav-container>
+
+
+
+  </md-sidenav-container>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="main-container" fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100vw;">
+
+  <!-- main toolbar -->
+  <app-main-toolbar></app-main-toolbar> 
+  
+
+  <md-sidenav-container>
+
+    <md-sidenav mode="side" opened>
+
+      <!-- menu left heare -->
+      <app-navigation-menu-left></app-navigation-menu-left>
+
+    </md-sidenav>
+
+    <!-- Table for prosfores -->
+    <app-prosfores-table></app-prosfores-table>
+
+  </md-sidenav-container>
+
+</div>
+
+

@@ -1,0 +1,43 @@
+<p>
+  Add New Offer
+</p>
+
+<form #form="ngForm" (ngSubmit)="dialogRef.close(form.value)" ngNativeValidate>
+  <div fxLayout="column" fxLayoutGap="8px">
+
+    <div fxLayout="row" fxLayoutGap="10px" class="example-full-width">
+      <md-input-container class="example-full-width">
+        <input mdInput ngModel name="title" placeholder="Title" required>
+      </md-input-container>
+
+      <md-input-container class="example-full-width">
+        <input type="number" mdInput ngModel name="price" placeholder="Price" required>
+      </md-input-container>
+    </div>
+
+    
+
+    <md-input-container>
+      <textarea mdInput ngModel name="description" placeholder="Description" rows="5" cols="60" required></textarea>
+    </md-input-container>
+
+    <div fxLayout="column" fxLayoutGap="8px" style="padding-right:20px;">
+      <input type="file" class="dropify" data-height="200" />
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="24px">
+      <md-checkbox color="primary" ngModel name="isAdmin">Is Admin?</md-checkbox>
+      <md-checkbox color="primary" ngModel name="isCool">Is Cool?</md-checkbox>
+    </div>
+  </div>
+
+  <md-dialog-actions align="left">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <button md-button type="button" (click)="dialogRef.close()">Cancel</button>
+      <button md-button color="accent">Save User</button>
+    </div>
+  </md-dialog-actions>
+
+</form>
+
+<!--<button md-raised-button (click)="dialogRef.close()">Close dialog</button>-->

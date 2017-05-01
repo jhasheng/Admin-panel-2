@@ -1,0 +1,55 @@
+table{
+  width:100%;
+  border-collapse: collapse;
+}
+
+thead{
+  height: 60px;
+}
+
+th{
+  text-align: left;
+}
+
+tr{
+  height: 50px;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+
+
+
+.toolbar{
+  height: 60px;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  padding-left: 10px;
+}
+
+thead > tr > th{
+  
+}
+
+tbody > tr{
+  height: 50px;
+  border-bottom: 1px solid lightgray;
+}
+
+.sorting-icon{
+  color: #646464;
+  cursor: pointer; 
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+
+td, th {
+  border-radius: 0px !important; 
+}
+
+.preloader{
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
