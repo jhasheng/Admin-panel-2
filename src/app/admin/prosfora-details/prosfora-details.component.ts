@@ -14,60 +14,59 @@ declare const $: any;
   styleUrls: ['./prosfora-details.component.css'],
 
   animations: [
-    trigger('myAwesomeAnimation', [
+    trigger('animateFrontLayer', [
         state('inactive', style({
-            // transform: 'scale(1)',
-        })),
-        state('active', style({
-            // transform: 'scale(1.2)',
-            width: '100%',
-            height: '100%'
-            // position: 'fixed',
-            // top: '0px',
-            // left: '0px',
-        })),
-        transition('inactive => active', animate('300ms ease-in')),
-        transition('active => inactive', animate('300ms ease-in')),
-    ]),
-
-    trigger('topAnimation', [
-        state('inactive', style({
+          position : 'relative',
           // transform: 'scale(1)',
+          'margin': '0px auto',
+          
+          width : '33%',
+          // height : '500px'
         })),
         state('active', style({
-          // transform: 'scale(1.2)',
-          // position : 'fixed',
-          // transform: 'translate(0px, 0px)',
-          // top: '0px',
-          // left: '0px',
-          // backgroundColor: 'purple',
-          margin: '0px auto',
-          color : 'white',
-          width : '80%',
-          height : '80%',
-
-          
-        })),
-        transition('inactive => active', animate('450ms ease-in')),
-        transition('active => inactive', animate('450ms ease-in')),
+          'position': 'fixed',
+          'height': 'calc(100vh - 112px)',
+          'width': '100%',
+          background: 'purple',
+          'z-index': 2
+          })),
+          transition('inactive => active', animate('10000ms ease-in')),
+          transition('active => inactive', animate('10000ms ease-out')),
     ]),
 
-    trigger('midAnimation', [
+    trigger('animateImage', [
         state('inactive', style({
-            // transform: 'scale(1)',
-
+          width : '100%',
+          'margin-left': '0px',
+          'margin-top': '0px',
         })),
         state('active', style({
-            // transform: 'scale(1.2)',
-            // display: 'none'
-            position: 'fixed',
+          width: '350px',
+          'margin-top': '80px',
+          'margin-left': '250px',
+          'box-shadow': '0px 5px 15px #3b3b3b',
+        })),
+        transition('inactive => active', animate('10000ms ease-in')),
+        transition('active => inactive', animate('10000ms ease-out')),
+    ]),
+
+    trigger('animateFooter', [
+        state('inactive', style({
+            // transform: 'scale(1)',
+            width: '100%',
+            'margin-top': '0px',
+        })),
+        state('active', style({
+            background: 'white',
             width: '80%',
-            top: '200px',
-            left: '10%',
+            margin: '0px auto',
+            'margin-top': '-220px',
+            'height': 'calc(100vh - 310px)',
+            'box-shadow': '0px 10px 20px #3b3b3b',
 
         })),
-        transition('inactive => active', animate('150ms ease-in')),
-        transition('active => inactive', animate('150ms ease-in')),
+        transition('inactive => active', animate('10000ms ease-in')),
+        transition('active => inactive', animate('10000ms ease-out')),
     ]),
 
     trigger('botAnimation', [
@@ -91,10 +90,12 @@ export class ProsforaDetailsComponent implements OnInit {
   isDarkTheme = false;
 
   // animations part
-  state: string = 'small';
-  state2: string = 'small';
-  state3: string = 'small';
-  state4: string = 'small';
+  state: string = 'inactive';
+  state2: string = 'inactive';
+  state3: string = 'inactive';
+  state4: string = 'inactive';
+  state5: string = 'inactive';
+  state6: string = 'inactive';
   // animations part
 
 
@@ -122,7 +123,17 @@ export class ProsforaDetailsComponent implements OnInit {
       this.state = (this.state === 'active' ? 'inactive' : 'active');
       this.state2 = (this.state2 === 'active' ? 'inactive' : 'active');
       this.state3 = (this.state3 === 'active' ? 'inactive' : 'active');
+
+      
+  }
+
+
+  animateMe2() {
+      
+
       this.state4 = (this.state4 === 'active' ? 'inactive' : 'active');
+      this.state5 = (this.state5 === 'active' ? 'inactive' : 'active');
+      this.state6 = (this.state6 === 'active' ? 'inactive' : 'active');
   }
 
   ngOnInit() {

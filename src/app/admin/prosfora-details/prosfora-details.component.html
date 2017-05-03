@@ -28,10 +28,6 @@
         <form #form="ngForm" (ngSubmit)="getEditProsforaForm(form.value)" ngNativeValidate>
           <div fxLayout="column" fxLayoutGap="8px">
 
-            <!--<div fxLayout="row" fxLayoutGap="10px" class="example-full-width">
-              
-            </div>-->
-
             <div fxLayout="column" fxLayoutGap="8px" style="padding-right:20px;">
               <input type="file" ngModel name="imagefile" class="dropify" data-height="200" />
             </div>
@@ -72,95 +68,97 @@
 
       <div class="example-sidenav-content">
 
-        <button md-button (click)="sidenavInside.toggle()">
+        <!--<button md-button (click)="sidenavInside.toggle()">
           Open sidenav
-        </button>
+        </button>-->
 
-        <!--<md-card class="example-card"  [@myAwesomeAnimation]='state' (click)="animateMe()">
-          <img (click)="sidenavInside.toggle()" md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-          <md-card-content [@myAwesomeAnimation2]='state2'> 
-            <div class="title">
-              <h3>Microsft 10</h3>
-            </div>
-            <div class="description">
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-                very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-              </p>
-            </div>
-          </md-card-content>
-          <md-card-actions class="txt-center" >
-            <button md-button>999€</button>
-          </md-card-actions>
-        </md-card>-->
+        <md-card class="example-card" [@animateFrontLayer]='state'>
 
+          <div class="frontLayer" >
 
-
-
-        <!--<md-card class="card-animation-test" [@myAwesomeAnimation]='state' (click)="animateMe()">
-          <div class="background" > 
-
-            <div class="content-top" [@topAnimation]='state2'></div>
-            <div class="content-mid" ></div>
-            <div class="content-bot" ></div>
-
-          </div>
-        </md-card>-->
-
-
-
-
-
-
-
-
-
-
-
-        <!--<div id="portfolio" class="cx gray">
-          <div class="db">
-            <div class="b e" style="">
-
-              <div class="d hx hf gu gallery-item gallery-expand ce polygon" style="">
-                <div class="placeholder">
-                  <div class="gallery-curve-wrapper">
-                    <a class="gallery-cover gray">
-                      <img class="responsive-img" src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/geometric-aquamarine.jpg?12295265317662713736"
-                        alt="placeholder" crossorigin="anonymous">
-                    </a>
-                    <div class="gallery-header">
-                      <span>Aquamarine</span>
-                    </div>
-                    <div class="gallery-body">
-                      <div class="title-wrapper">
-                        <h3>Aquamarine</h3>
-                        <span class="gj">$29.99</span>
-                      </div>
-                      <p class="fi">
-                        Literally venmo before they sold out, DIY heirloom forage polaroid offal yr pop-up selfies health goth. Typewriter scenester
-                         portland small batch.</p>
-                      <p class="fi">
-                        Ea salvia adipisicing vegan man bun. Flexitarian cupidatat skateboard flannel. Drinking vinegar marfa you probably haven't
-                        heard of them consequat post-ironic, shabby chic williamsburg raclette vaporware readymade selfies
-                        .</p>
-
-                    </div>
-                    <div class="gallery-action">
-                      <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">favorite</i></a>
-                    </div>
-                  </div>
-                </div>
+            <img (click)="animateMe()" [@animateImage]='state2'  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            
+            <md-card-content> 
+              <div class="title">
+                <h3>Microsft 10</h3>
               </div>
+              <div class="description">
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                  very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+              </div>
+            </md-card-content>
 
-
-            </div>
+            <md-card-actions [@animateFooter]='state3'  class="txt-center" >
+              <button md-button>999€</button>
+            </md-card-actions>
           </div>
-        </div>-->
 
+          <!--<div class="backLayer" [@animateBackLayer]='state2'>
+            <img  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <md-card-content> 
+              <div class="title">
+                <h3>Microsft 10</h3>
+              </div>
+              <div class="description">
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                  very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+              </div>
+            </md-card-content>
+            <md-card-actions class="txt-center" >
+              <button md-button>999€</button>
+            </md-card-actions>
+          </div>-->
 
+          
+        </md-card>
 
+        <md-card class="example-card" [@animateFrontLayer]='state4'>
 
+          <div class="frontLayer" >
 
+            <img (click)="animateMe2()" [@animateImage]='state5'  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            
+            <md-card-content> 
+              <div class="title">
+                <h3>Microsft 10</h3>
+              </div>
+              <div class="description">
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                  very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+              </div>
+            </md-card-content> 
+
+            <md-card-actions [@animateFooter]='state6'  class="txt-center" >
+              <button md-button>999€</button>
+            </md-card-actions>
+          </div>
+
+          <!--<div class="backLayer" [@animateBackLayer]='state2'>
+            <img  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <md-card-content> 
+              <div class="title">
+                <h3>Microsft 10</h3>
+              </div>
+              <div class="description">
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+                  very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+              </div>
+            </md-card-content>
+            <md-card-actions class="txt-center" >
+              <button md-button>999€</button>
+            </md-card-actions>
+          </div>-->
+
+          
+        </md-card>
 
 
 
