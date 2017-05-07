@@ -72,26 +72,31 @@
           Open sidenav
         </button>-->
 
-        <md-card class="example-card" [@animateFrontLayer]='state'>
+        <!-- Opens the sidenav -->
+        <button md-fab class="btn_edit" (click)="sidenavInside.toggle()"><md-icon>mode_edit</md-icon></button>
+
+
+        <md-card (click)="animateMe()" class="example-card" [@animateCard]='card_state'>
 
           <div class="frontLayer" >
 
-            <img (click)="animateMe()" [@animateImage]='state2'  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <img  [@animateImage]='image_state'  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
             
             <md-card-content> 
-              <div class="title">
+              <div [@animateDescription]='title_state' class="title">
                 <h3>Microsft 10</h3>
               </div>
-              <div class="description">
+              <div [@animateDescription]='description_state' class="description">
                 <p>
                   The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
                   very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
                 </p>
               </div>
-            </md-card-content>
+            </md-card-content> 
 
-            <md-card-actions [@animateFooter]='state3'  class="txt-center" >
-              <button md-button>999€</button>
+            <md-card-actions class="txt-center" >
+              <span [@animatePrice]='price_state' >999€</span>
+              <!--<button md-button>999€</button>-->
             </md-card-actions>
           </div>
 
@@ -116,7 +121,7 @@
           
         </md-card>
 
-        <md-card class="example-card" [@animateFrontLayer]='state4'>
+        <!--<md-card class="example-card" [@animateFrontLayer]='state4'>
 
           <div class="frontLayer" >
 
@@ -138,27 +143,8 @@
               <button md-button>999€</button>
             </md-card-actions>
           </div>
-
-          <!--<div class="backLayer" [@animateBackLayer]='state2'>
-            <img  md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-            <md-card-content> 
-              <div class="title">
-                <h3>Microsft 10</h3>
-              </div>
-              <div class="description">
-                <p>
-                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-                  very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                </p>
-              </div>
-            </md-card-content>
-            <md-card-actions class="txt-center" >
-              <button md-button>999€</button>
-            </md-card-actions>
-          </div>-->
-
           
-        </md-card>
+        </md-card>-->
 
 
 

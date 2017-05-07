@@ -24,10 +24,16 @@ export class NavigationMenuLeftComponent implements OnInit {
       name: 'Υπηρεσίες',
       link : '/ypiresies',
       icon : 'supervisor_account'
-    },{
+    },
+    {
       name: 'Προιόντα',
-      link : '/products',
+      link : '/admin-products',
       icon : 'shoping_basket'
+    },
+    {
+      name: 'Επικοινωνία',
+      link : '/admin-contact-form',
+      icon : 'map'
     },
     {
       name: 'Ρυθμίσης',

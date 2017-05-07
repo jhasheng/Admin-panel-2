@@ -15,14 +15,13 @@
       </md-input-container>
     </div>
 
-    
-
     <md-input-container>
       <textarea mdInput ngModel name="description" placeholder="Description" rows="5" cols="60" required></textarea>
     </md-input-container>
 
+    <!-- IMAGE -->
     <div fxLayout="column" fxLayoutGap="8px" style="padding-right:20px;">
-      <input type="file" class="dropify" data-height="200" />
+      <input id="imgForNewProsfora" (change)="fileChange($event)" type="file" ngModel name="image" class="dropify" data-height="200" />
     </div>
 
     <div fxLayout="row" fxLayoutGap="24px">
@@ -34,7 +33,7 @@
   <md-dialog-actions align="left">
     <div fxLayout="row" fxLayoutGap="10px">
       <button md-button type="button" (click)="dialogRef.close()">Cancel</button>
-      <button md-button color="accent">Save User</button>
+      <button md-button color="warn">Save User</button>
     </div>
   </md-dialog-actions>
 

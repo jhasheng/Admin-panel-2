@@ -1,0 +1,121 @@
+<div class="main-container" fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100vw;">
+
+  <!-- main toolbar -->
+  <app-main-toolbar></app-main-toolbar>
+
+
+  <md-sidenav-container> 
+
+    <md-sidenav mode="side" opened>
+      <!-- menu left heare -->
+      <app-navigation-menu-left></app-navigation-menu-left>
+
+    </md-sidenav>
+
+    <!-- Table for prosfores -->
+    <!--<app-prosfores-table></app-prosfores-table>-->
+
+    <md-spinner *ngIf="loadComplete" class="preloader"></md-spinner>
+
+    <!-- Iner sideNav  container -->
+    <md-sidenav-container style="">
+
+
+      <md-sidenav #sidenavInside mode="side" align="end" style="background:#fff; border-left: 1px solid lightgray; width:300px; padding:20px;">
+
+        <h4>Edit Prosfora</h4>
+
+        <form #form="ngForm" (ngSubmit)="getEditContactForm(form.value)" ngNativeValidate>
+          <div fxLayout="column" fxLayoutGap="8px">
+
+          
+
+            <md-input-container>   
+              <!--<input mdInput ngModel name="inputValue" placeholder="State" [mdAutocomplete]="auto" [formControl]="stateCtrl">-->
+              <input mdInput name="country" placeholder="Χώρα" [mdAutocomplete]="auto" [formControl]="countryCtrl" required>
+            </md-input-container> 
+
+            <md-autocomplete #auto="mdAutocomplete">
+              <md-option *ngFor="let country of filteredCountries | async" [value]="country">
+                {{ country }}
+              </md-option>
+            </md-autocomplete>
+
+            <!--<md-input-container class="example-full-width">
+              <input mdInput ngModel name="country" placeholder="Χώρα" required>
+            </md-input-container>-->
+
+            <md-input-container class="example-full-width">
+              <input mdInput ngModel name="prefecture" placeholder="Νομός" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput ngModel name="region" placeholder="Περιοχή" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput ngModel name="address" placeholder="Οδός" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input type="number" mdInput ngModel name="address_number" placeholder="Αριθμός" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput type="number" ngModel name="tk" placeholder="TK" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput type="email" ngModel name="email" placeholder="email" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput type="number" ngModel name="stathero" placeholder="Σταθερό" required>
+            </md-input-container>
+
+            <md-input-container class="example-full-width">
+              <input mdInput type="number" ngModel name="stathero" placeholder="Κινητό" required>
+            </md-input-container>
+
+          </div>
+
+          <md-dialog-actions align="center" style="margin-top:50px;">
+            <div fxLayout="row" fxLayoutGap="10px">
+              <button md-button type="button" (click)="sidenavInside.close()">Cancel</button>
+              <button md-raised-button color="primary">Save</button>
+            </div>
+          </md-dialog-actions>
+
+        </form>
+
+      </md-sidenav>
+
+
+      <div class="example-sidenav-content">
+
+        <!-- Opens the sidenav -->
+        <button md-fab class="btn_edit" (click)="sidenavInside.toggle()"><md-icon>mode_edit</md-icon></button>
+
+        <!-- Map go here -->
+        <!--Api key = AIzaSyDDyHNz4XANDEazV95udv8g5FxlVVfszWc  -->
+        <md-card>
+          <iframe 
+            width="700"
+            height="550"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDyHNz4XANDEazV95udv8g5FxlVVfszWc
+              &q=Έλλης Αλεξίου 49, Άνω Λιόσια" allowfullscreen>
+          </iframe>
+
+          <!--<p> Form: {{ form.value | json}}</p>-->
+        </md-card>
+
+      </div>
+
+    </md-sidenav-container>
+
+
+
+  </md-sidenav-container>
+
+</div>

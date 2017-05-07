@@ -1,0 +1,6 @@
+[0507/011132.258:ERROR:process_info.cc(625)] range at 0xbd974a4600000000, size 0x1ad fully unreadable
+[0507/011132.259:ERROR:process_info.cc(625)] range at 0xbd974aac00000000, size 0x1ad fully unreadable
+[0507/011132.259:ERROR:process_info.cc(625)] range at 0x0, size 0x1ad fully unreadable
+[0507/011132.353:ERROR:process_reader_win.cc(233)] ReadMemory at 0xa2353ed000 of 77824 bytes failed: Μία αίτηση ReadProcessMemory ή WriteProcessMemory ικανοποιήθηκε μόνο εν μέρει. (0x12B)
+[0507/011132.354:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0507/011132.362:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: Έγινε προσπάθεια πρόσβασης σε μια διεργασία εξόδου.  (0xc000010a)
