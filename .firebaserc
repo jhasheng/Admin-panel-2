@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "admin-panel-2"
+    "default": "admin-panel-2",
+    "admin-panel-2": "admin-panel-2"
   }
 }

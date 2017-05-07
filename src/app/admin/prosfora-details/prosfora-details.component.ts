@@ -1,12 +1,14 @@
+// @ts-check
+
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import * as firebase from 'firebase';
 
-import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 declare const $: any;
- 
+
 
 @Component({
   selector: 'app-prosfora-details',
@@ -14,24 +16,23 @@ declare const $: any;
   styleUrls: ['./prosfora-details.component.css'],
 
   animations: [
-    trigger('animateFrontLayer', [
+    trigger('animateCard', [
         state('inactive', style({
           position : 'relative',
           // transform: 'scale(1)',
           'margin': '0px auto',
-          
-          width : '33%',
-          // height : '500px'
+          'width' : '350px',
+          'height' : '500px'
         })),
         state('active', style({
-          'position': 'fixed',
           'height': 'calc(100vh - 112px)',
           'width': '100%',
-          background: 'purple',
+          'position': 'fixed',
+          'background': 'rgba(55, 55, 55, 0.85)',
           'z-index': 2
           })),
-          transition('inactive => active', animate('10000ms ease-in')),
-          transition('active => inactive', animate('10000ms ease-out')),
+          transition('inactive => active', animate('250ms ease-in')),
+          transition('active => inactive', animate('250ms ease-out')),
     ]),
 
     trigger('animateImage', [
@@ -42,19 +43,20 @@ declare const $: any;
         })),
         state('active', style({
           width: '350px',
-          'margin-top': '80px',
-          'margin-left': '250px',
+          'margin-top': '2%',
+          'margin-left': '18%',
           'box-shadow': '0px 5px 15px #3b3b3b',
         })),
-        transition('inactive => active', animate('10000ms ease-in')),
-        transition('active => inactive', animate('10000ms ease-out')),
+        transition('inactive => active', animate('300ms ease-in')),
+        transition('active => inactive', animate('300ms ease-out')),
     ]),
 
-    trigger('animateFooter', [
+    trigger('animatePrice', [
         state('inactive', style({
             // transform: 'scale(1)',
             width: '100%',
             'margin-top': '0px',
+            'margin': '0px auto',
         })),
         state('active', style({
             background: 'white',
@@ -65,23 +67,38 @@ declare const $: any;
             'box-shadow': '0px 10px 20px #3b3b3b',
 
         })),
-        transition('inactive => active', animate('10000ms ease-in')),
-        transition('active => inactive', animate('10000ms ease-out')),
+        transition('inactive => active', animate('300ms ease-in')),
+        transition('active => inactive', animate('300ms ease-out')),
     ]),
 
-    trigger('botAnimation', [
+    trigger('animateDescription', [
         state('inactive', style({
             // transform: 'scale(1)',
-
+            width: '100%',
+            'text-align': '-webkit-center',
         })),
         state('active', style({
             // transform: 'scale(1.2)',
-            background: 'yellow'
+            'text-align': '-webkit-center',
+            width: '80%'
 
         })),
         transition('inactive => active', animate('150ms ease-in')),
         transition('active => inactive', animate('150ms ease-in')),
     ]),
+
+    trigger('animatePrice', [
+        state('inactive', style({
+
+        })),
+        state('active', style({
+          color : 'red'
+        })),
+        transition('inactive => active', animate('150ms ease-in')),
+        transition('active => inactive', animate('150ms ease-in')),
+    ]),
+
+
   ]
 
 })
@@ -89,14 +106,12 @@ export class ProsforaDetailsComponent implements OnInit {
 
   isDarkTheme = false;
 
-  // animations part
-  state: string = 'inactive';
-  state2: string = 'inactive';
-  state3: string = 'inactive';
-  state4: string = 'inactive';
-  state5: string = 'inactive';
-  state6: string = 'inactive';
-  // animations part
+  // animations States
+  card_state: string = 'inactive';
+  image_state: string = 'inactive';
+  title_state: string = 'inactive';
+  description_state: string = 'inactive';
+  price_state: string = 'inactive';
 
 
 
@@ -120,20 +135,11 @@ export class ProsforaDetailsComponent implements OnInit {
 
 
   animateMe() {
-      this.state = (this.state === 'active' ? 'inactive' : 'active');
-      this.state2 = (this.state2 === 'active' ? 'inactive' : 'active');
-      this.state3 = (this.state3 === 'active' ? 'inactive' : 'active');
-
-      
-  }
-
-
-  animateMe2() {
-      
-
-      this.state4 = (this.state4 === 'active' ? 'inactive' : 'active');
-      this.state5 = (this.state5 === 'active' ? 'inactive' : 'active');
-      this.state6 = (this.state6 === 'active' ? 'inactive' : 'active');
+      this.card_state = (this.card_state === 'active' ? 'inactive' : 'active');
+      this.image_state = (this.image_state === 'active' ? 'inactive' : 'active');
+      this.title_state = (this.title_state === 'active' ? 'inactive' : 'active');
+      this.description_state = (this.description_state === 'active' ? 'inactive' : 'active');
+      this.price_state = (this.price_state === 'active' ? 'inactive' : 'active');
   }
 
   ngOnInit() {
@@ -179,5 +185,14 @@ export class ProsforaDetailsComponent implements OnInit {
     this.firebaseService.deleteProsfora(this.id);
     this.router.navigate(['./prosfores']);
   }
+
+
+
+
+
+
+
+
+
 
 }

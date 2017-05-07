@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.btn_edit{
+  position: absolute;
+  bottom: 20px;
+  right:20px;
+}
 
 .example-card {
   width: 300px;
@@ -17,6 +22,7 @@
 
 .description{
   text-align: center;
+  text-align: -webkit-center;
 }
 
 .txt-center{

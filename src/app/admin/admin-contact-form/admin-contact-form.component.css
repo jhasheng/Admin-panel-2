@@ -1,0 +1,12 @@
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_edit{
+  position: absolute;
+  bottom: 20px;
+  right:20px;
+}

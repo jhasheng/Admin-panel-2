@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -43,6 +43,8 @@ import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-deta
 import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 
 import { HomeComponent } from './client/home/home.component';
+import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 
 const firebaseAuthConfig = {
@@ -67,7 +69,9 @@ const firebaseAuthConfig = {
     ProsforesTableComponent,
     ProsforaDetailsComponent,
     YpiresiesComponent,
-    HomeComponent
+    HomeComponent,
+    AdminContactFormComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,8 @@ const firebaseAuthConfig = {
     AngularFireModule.initializeApp(environment.firabaseConfig, firebaseAuthConfig),
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [FirebaseService, AuthGuardService],
   entryComponents: [DialogComponent, DialogAddProsforaComponent, DialogeDeleteProsforaComponent],

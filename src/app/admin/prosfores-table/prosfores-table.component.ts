@@ -34,6 +34,8 @@ export class ProsforesTableComponent implements OnInit {
   prosforesSelected = [];
   prosforesSelectedCounter = 0;
 
+  isAllChecked: any;
+
 
   constructor(
     private dialog: MdDialog,
@@ -53,43 +55,75 @@ export class ProsforesTableComponent implements OnInit {
   }
 
 
-
+  /**
+   * Opens the dialoge for add new prosfora
+   */
   openDialogAddProsfora() {
 
     this.dialogAddProsfora.open(DialogAddProsforaComponent).afterClosed()
       .filter(result => !!result)
       .subscribe(prosfora => {
-        this.prosfores.push(prosfora);
-        // this.selectedUser = user;
+
         console.log(prosfora);
+
+        let prosfora_obj = {
+          title : prosfora.title,
+          description: prosfora.description,
+          price: prosfora.price,
+          time_created : this.getCurentTime(),
+          time_updated: this.getCurentTime()
+        };
+
+        console.log(prosfora_obj);
+
+        this.firebaseService.addProsfora(prosfora_obj);
+        this.router.navigate(['/prosfores']);
+
       });
 
   }
 
+  /**
+   * Opens the dialoge for delete prosfora
+   */
   openDialogDeleteProsfora() {
     this.dialogDeleteProsfora = this.dialog.open(DialogeDeleteProsforaComponent, {
       // height: '400px',
       // width: '600px',
     });
-    
     this.dialogDeleteProsfora.componentInstance.selectedProsfores = this.prosforesSelectedCounter;
     this.dialogDeleteProsfora.componentInstance.someMessage = 'SOSKE';
   }
 
+  rootChakeBoxState(){
+
+    console.log(this.rootCheckBox);
+
+    let searchIDs = $('input:checked').map(function(){
+      // return $(this).val('id');
+      return this.id;
+    });
+    
+
+    if (this.rootCheckBox === true) {
+      console.log('all check');
+      this.isAllChecked = true;
+      console.log(searchIDs.get());
+    } else {
+      console.log('all uncheck');
+      this.isAllChecked = false;
+      console.log(searchIDs.get());
+    }
+
+
+  }
+
+
+
+  
 
   statusCheckBox() {
-    this.rootCheckBox = this.rootCheckBox ? true : false;
-
-    // if (this.rootCheckBox === true) {
-    //    this.tableData.forEach(element => {
-    //     element.state =  true;
-    //   });
-    // } else {
-    //    this.tableData.forEach(element => {
-    //     element.state =  false;
-    //   });
-    // }
-
+    // this.rootCheckBox = this.rootCheckBox ? true : false;
 
     // this.tableData[0].state = true;
     console.log(this.rootCheckBox);
@@ -193,20 +227,8 @@ export class ProsforesTableComponent implements OnInit {
   }
 
 
-  onAddProsforaSubmit() {
+  addProsfora() {
 
-    let prosfora = {
-      title : this.title,
-      description: this.description,
-      price: this.price,
-      time_created : this.getCurentTime(),
-      time_updated: this.getCurentTime()
-    };
-
-    console.log(prosfora);
-
-    this.firebaseService.addProsfora(prosfora);
-    this.router.navigate(['/prosfores']);
   }
 
 }

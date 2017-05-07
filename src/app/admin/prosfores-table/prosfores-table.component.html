@@ -32,7 +32,7 @@
         <tr>
           <th>
             <div style="height:22px; margin-left:20px;">
-              <md-checkbox color="primary" id="chk-all" [(ngModel)]="rootCheckBox" name="rootCheckBox"></md-checkbox>
+              <md-checkbox color="primary" id="rootCheckBox" [(ngModel)]="rootCheckBox" name="rootCheckBox" (change)="rootChakeBoxState()"></md-checkbox>
             </div>
           </th>
           <th class="">Title
@@ -49,9 +49,7 @@
         <tr *ngFor="let prosfora of prosfores">
           <td style="width:50px;">
             <div style="height:22px; margin-left:20px;">
-              <md-checkbox color="primary" id="{{prosfora.$key}}" (change)="statusCheckBox()"></md-checkbox>
-              <!--<input type="checkbox" id="chk-{{prosfora.$key}}" (change)="statusCheckBox()" />
-              <label for="chk-{{prosfora.$key}}"></label>-->
+              <md-checkbox color="primary" class="chkbox" [checked]="isAllChecked"  id="{{prosfora.$key}}" (change)="statusCheckBox()"></md-checkbox>
             </div>
           </td>
           <td>

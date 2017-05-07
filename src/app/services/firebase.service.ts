@@ -12,6 +12,8 @@ export class FirebaseService {
   listing: FirebaseObjectObservable<any>;
   prosfora: FirebaseObjectObservable<any>;
 
+  prosforaUploadImg: any;
+
   folder: any;
   folderProsfores: any;
 
@@ -74,15 +76,30 @@ export class FirebaseService {
     // create root ref
     const storageRef = firebase.storage().ref();
 
-    for (let selectedFile of [(<HTMLInputElement>document.getElementById('image_prosfora')).files[0]]){
-      let path = `/${this.folderProsfores}/${selectedFile.name}`;
-      let iRef = storageRef.child(path);
-      iRef.put(selectedFile).then((snapshot) => {
-        prosfora.image = selectedFile.name;
-        prosfora.path = path;
-        return this.prosfores.push(prosfora);
-      });
-    }
+    // for (let selectedFile of [(<HTMLInputElement>document.getElementById('imgForNewProsfora')).files[0]]){
+    //   let path = `/${this.folderProsfores}/${selectedFile.name}`;
+    //   let iRef = storageRef.child(path);
+    //   iRef.put(selectedFile).then((snapshot) => {
+
+    //     console.log(selectedFile);
+    //     prosfora.image = selectedFile.name;
+    //     prosfora.path = path;
+    //     return this.prosfores.push(prosfora);
+    //   });
+    // }
+
+
+    let selectedFile = this.prosforaUploadImg;
+    // let selectedFile = prosfora.image;
+    let path = `/${this.folderProsfores}/${selectedFile.name}`;
+    let iRef = storageRef.child(path);
+    iRef.put(selectedFile).then((snapshot) => {
+
+      // console.log(selectedFile);
+      prosfora.image = selectedFile.name;
+      prosfora.path = path;
+      return this.prosfores.push(prosfora);
+    });
 
   }
 
