@@ -1,0 +1,87 @@
+<div class="main-container" fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100vw;">
+
+  <!-- main toolbar -->
+  <app-main-toolbar></app-main-toolbar>
+
+
+  <md-sidenav-container>
+
+    <md-sidenav mode="side" opened>
+
+      <!-- menu left heare -->
+      <app-navigation-menu-left></app-navigation-menu-left>
+
+    </md-sidenav>
+
+    <!-- Table for prosfores -->
+    <!--<app-prosfores-table></app-prosfores-table>-->
+    <h1>Settings Page</h1>
+    <md-tab-group>
+      <md-tab label="User">
+
+        <md-card style="width:300px;">
+          <h3>User Data Settings</h3>
+          <form [formGroup]="userForm" (ngSubmit)="addUserData(userForm.value)" ngNativeValidate>
+            <div fxLayout="column" fxLayoutGap="8px">
+
+              <md-input-container class="example-full-width">
+                <input mdInput formControlName="firstName" name="firstName" placeholder="First Name" required>
+                <md-error *ngIf="!userForm.controls['firstName'].valid">min length 5 leksis</md-error>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input mdInput formControlName="lastName" name="lastName" placeholder="Last Name" required>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input mdInput type="email" formControlName="email" name="email" placeholder="email" required>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input mdInput formControlName="address" name="address" placeholder="Address" required>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input type="number" mdInput formControlName="addressNumber" name="addressNumber" placeholder="Addres Number" required>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input mdInput type="text" formControlName="tk" name="tk" placeholder="TK" required>
+              </md-input-container>
+
+              
+
+              <md-input-container class="example-full-width">
+                <input mdInput type="tel" formControlName="stathero" name="stathero" placeholder="Σταθερό" required>
+              </md-input-container>
+
+              <md-input-container class="example-full-width">
+                <input mdInput type="tel" formControlName="kinito" name="kinito" placeholder="Κινητό" required>
+              </md-input-container>
+
+            </div>
+
+            <md-dialog-actions align="center" style="margin-top:50px;">
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button md-button type="button">Cancel</button>
+                <button md-raised-button color="primary" [disabled]="!userForm.valid">Save</button>
+              </div>
+            </md-dialog-actions>
+
+          </form>
+
+          <p> Form: {{ userForm.value | json }}</p>
+        </md-card>
+
+
+
+      </md-tab>
+      <md-tab label="Logo">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+      </md-tab>
+    </md-tab-group>
+
+  </md-sidenav-container>
+
+</div>

@@ -37,7 +37,7 @@ export class NavigationMenuLeftComponent implements OnInit {
     },
     {
       name: 'Ρυθμίσης',
-      link : '/settings',
+      link : '/admin-settings',
       icon : 'settings'
     },
   ];

@@ -13,6 +13,7 @@ import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-deta
 import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 
 
 // pages
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'admin-contact-form', component: AdminContactFormComponent, canActivate : [AuthGuardService] },
 
   { path: 'admin-products', component: AdminProductsComponent, canActivate : [AuthGuardService] },
+  { path: 'admin-settings', component: AdminSettingsComponent, canActivate : [AuthGuardService] },
 
   { path: 'login', component: LoginComponent},
   { path: 'page-404', component: Page404Component},

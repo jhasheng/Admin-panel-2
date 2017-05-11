@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -45,6 +45,7 @@ import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 import { HomeComponent } from './client/home/home.component';
 import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 
 
 const firebaseAuthConfig = {
@@ -71,7 +72,8 @@ const firebaseAuthConfig = {
     YpiresiesComponent,
     HomeComponent,
     AdminContactFormComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    AdminSettingsComponent
   ],
   imports: [
     BrowserModule,
