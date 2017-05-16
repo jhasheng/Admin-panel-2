@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/George35mk/Admin-panel-2.svg?branch=master)](https://travis-ci.org/George35mk/Admin-panel-2)
+
+## https://admin-panel-2.firebaseapp.com/prosfores
+
 ## npm install --save @angular/material
 ## npm install --save @angular/animations 
 ## npm install --save hammerjs

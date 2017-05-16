@@ -5,8 +5,8 @@
 
   <div style="font-size:16px;">
     <!--admin@gmail.com-->
-    <div *ngIf="(af.auth | async)">
-      <span>{{ email.auth.email }}</span>
+    <div *ngIf="(user)">
+      <span>{{ email }}</span>
     </div> 
   </div>
 

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -16,7 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 // ********************** SERVICES ********************* //
 import { FirebaseService } from './services/firebase.service';
-import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2'; 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 // ********************** ENVIROMENT ********************* //
 import { environment } from '../environments/environment.prod';
@@ -45,12 +47,13 @@ import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 import { HomeComponent } from './client/home/home.component';
 import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 
 
-const firebaseAuthConfig = {
-  provider: AuthProviders.Google,
-  method: AuthMethods.Popup
-};
+// const firebaseAuthConfig = {
+//   provider: AuthProviders.Google,
+//   method: AuthMethods.Popup
+// };
 
 
 
@@ -71,7 +74,8 @@ const firebaseAuthConfig = {
     YpiresiesComponent,
     HomeComponent,
     AdminContactFormComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    AdminSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,14 +83,15 @@ const firebaseAuthConfig = {
     HttpModule,
     AppRoutingModule,
 
-    AngularFireModule.initializeApp(environment.firabaseConfig, firebaseAuthConfig),
-    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firabaseConfig),
+    AngularFireDatabaseModule,
+    MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule
   ],
-  providers: [FirebaseService, AuthGuardService],
+  providers: [AngularFireAuth, AngularFireDatabase, FirebaseService, AuthGuardService],
   entryComponents: [DialogComponent, DialogAddProsforaComponent, DialogeDeleteProsforaComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }  
+export class AppModule { }
