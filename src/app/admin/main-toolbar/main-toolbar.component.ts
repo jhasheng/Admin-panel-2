@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
 declare const $: any;
@@ -10,23 +12,26 @@ declare const $: any;
   styleUrls: ['./main-toolbar.component.css']
 })
 export class MainToolbarComponent implements OnInit {
-
+  
   isDarkTheme = false;
+  user: Observable<firebase.User>;
 
   email: any;
 
-  constructor(public af: AngularFire, private router: Router) {
+  constructor(public af: AngularFireAuth, private router: Router) {
 
     // CHECK USER STATE
-    this.af.auth.subscribe(auth => {
+    this.af.authState.subscribe(auth => {
 
-      if (auth) {
-        this.email = auth;
-        console.log('You are loged in');
+      this.af.authState.subscribe(
+    (user) => {
+      if (user != null) {
+        this.email = user.email;
+        // console.log(user);
       } else {
-        this.router.navigate(['/home']);
-        console.log('You are not not log in');
+        this.router.navigate(['/login']);
       }
+    });
 
     });
 
@@ -37,7 +42,8 @@ export class MainToolbarComponent implements OnInit {
 
   // LOGOUT METHOD
   logout() {
-    this.af.auth.logout();
+     this.af.auth.signOut();
+     this.router.navigateByUrl('/login'); // des ama afto einai aparetito
   }
 
 }

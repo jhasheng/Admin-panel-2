@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 import { AuthGuardService } from './services/auth-guard.service';
- 
+
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './admin/login/login.component';
 import { Page404Component } from './admin/page-404/page-404.component';
+import { ProsforesComponent } from './admin/prosfores/prosfores.component';
 import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-details.component';
 import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
@@ -21,7 +21,6 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 
 
 
-import { ProsforesComponent } from './admin/prosfores/prosfores.component';
 
 
 

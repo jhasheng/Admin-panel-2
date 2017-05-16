@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase'; 
 
 
@@ -17,12 +20,12 @@ export class FirebaseService {
   folder: any;
   folderProsfores: any;
 
-  constructor(private af: AngularFire) {
+  constructor(private db: AngularFireDatabase) {
     this.folder = 'listingimages';
     this.folderProsfores = 'prosfores-images';
 
-    this.listings = this.af.database.list('/listings') as FirebaseListObservable<Listing[]>;
-    this.prosfores = this.af.database.list('/prosfores') as FirebaseListObservable<Prosfora[]>;
+    this.listings = this.db.list('/listings') as FirebaseListObservable<Listing[]>;
+    this.prosfores = this.db.list('/prosfores') as FirebaseListObservable<Prosfora[]>;
   }
 
 
@@ -41,12 +44,12 @@ export class FirebaseService {
 
   // Gets the listing Details
   getListingDetails(id) {
-    this.listing = this.af.database.object('/listings/' + id) as FirebaseObjectObservable<Listing>;
+    this.listing = this.db.object('/listings/' + id) as FirebaseObjectObservable<Listing>;
     return this.listing;
   }
 
   getProsforaDetails(id) {
-    this.prosfora = this.af.database.object('/prosfores/' + id) as FirebaseObjectObservable<Prosfora>;
+    this.prosfora = this.db.object('/prosfores/' + id) as FirebaseObjectObservable<Prosfora>;
     return this.prosfora;
   }
 
