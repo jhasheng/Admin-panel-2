@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase'; 
+import * as firebase from 'firebase';
 
 
 @Injectable()
@@ -60,8 +60,8 @@ export class FirebaseService {
     const storageRef = firebase.storage().ref();
 
     for (let selectedFile of [(<HTMLInputElement>document.getElementById('image')).files[0]]){
-      let path = `/${this.folder}/${selectedFile.name}`;
-      let iRef = storageRef.child(path);
+      const path = `/${this.folder}/${selectedFile.name}`;
+      const iRef = storageRef.child(path);
       iRef.put(selectedFile).then((snapshot) => {
         listing.image = selectedFile.name;
         listing.path = path;
@@ -94,8 +94,8 @@ export class FirebaseService {
 
     let selectedFile = this.prosforaUploadImg;
     // let selectedFile = prosfora.image;
-    let path = `/${this.folderProsfores}/${selectedFile.name}`;
-    let iRef = storageRef.child(path);
+    const path = `/${this.folderProsfores}/${selectedFile.name}`;
+    const iRef = storageRef.child(path);
     iRef.put(selectedFile).then((snapshot) => {
 
       // console.log(selectedFile);
