@@ -11,9 +11,13 @@ export class FirebaseService {
 
   listings: FirebaseListObservable<any[]>;
   prosfores: FirebaseListObservable<any[]>;
+  themes: FirebaseListObservable<any[]>;
+
 
   listing: FirebaseObjectObservable<any>;
   prosfora: FirebaseObjectObservable<any>;
+
+  theme: FirebaseObjectObservable<any[]>;
 
   prosforaUploadImg: any;
 
@@ -26,9 +30,14 @@ export class FirebaseService {
 
     this.listings = this.db.list('/listings') as FirebaseListObservable<Listing[]>;
     this.prosfores = this.db.list('/prosfores') as FirebaseListObservable<Prosfora[]>;
+    this.themes = this.db.list('/themes') as FirebaseListObservable<Theme[]>;
   }
 
 
+  getTheme () {
+    this.theme = this.db.object('/theme') as FirebaseObjectObservable<Theme>;
+    return this.theme;
+  }
 
   // Gets listtings
   getListings() {
@@ -150,5 +159,10 @@ interface Prosfora {
   image_prosfora?:    string;
   description?: string;
   active?:    string;
+}
+
+interface Theme {
+  $key?:     string;
+  theme?:     string;
 }
 

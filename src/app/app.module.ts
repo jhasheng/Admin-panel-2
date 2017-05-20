@@ -48,7 +48,8 @@ import { HomeComponent } from './client/home/home.component';
 import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
-
+import { Home2Component } from './client/home-2/home-2.component';
+ 
 
 // const firebaseAuthConfig = {
 //   provider: AuthProviders.Google,
@@ -75,7 +76,8 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
     HomeComponent,
     AdminContactFormComponent,
     AdminProductsComponent,
-    AdminSettingsComponent
+    AdminSettingsComponent,
+    Home2Component
   ],
   imports: [
     BrowserModule,
