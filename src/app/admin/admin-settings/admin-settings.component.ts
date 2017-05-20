@@ -25,7 +25,7 @@ export class AdminSettingsComponent implements OnInit {
   stathero: number;
   kinito: number;
 
-  constructor(private formB: FormBuilder) { 
+  constructor(private formB: FormBuilder) {
 
     this.userForm = formB.group({
       'firstName': [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(50)])],

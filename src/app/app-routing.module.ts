@@ -4,6 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './services/auth-guard.service';
 
 
+
+// theme 1
+import { HomeComponent } from './client/home/home.component';
+
+// theme 2
+import { Home2Component } from './client/home-2/home-2.component';
+
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './admin/login/login.component';
@@ -16,18 +24,12 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 
 
-// pages
-
-
-
-
-
-
-
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'prosfores' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+
   { path: 'dashboard', component: DashboardComponent, canActivate : [AuthGuardService] },
 
   { path: 'prosfores', component: ProsforesComponent, canActivate : [AuthGuardService] },
@@ -45,8 +47,16 @@ const routes: Routes = [
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];
 
+
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+
+

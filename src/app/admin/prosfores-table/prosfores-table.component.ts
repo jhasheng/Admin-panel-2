@@ -20,7 +20,7 @@ export class ProsforesTableComponent implements OnInit {
   // dialogAddProsfora: MdDialogRef<any>;
   dialogDeleteProsfora: MdDialogRef<any>;
 
-  loadComplete: boolean = false;
+  loadComplete: Boolean = false;
 
 
   prosfores: any;

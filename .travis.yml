@@ -16,8 +16,11 @@ script:
   - ng build --prod
 
 after_success:
-  - firebase use --add admin-panel-2
+  - firebase use admin-panel-2
   - firebase deploy --token $FIREBASE_TOKEN
+
+  - firebase use property-app
+  - firebase deploy --token $FIREBASE_TOKEN_PROPERY_APP
 
 notifications:
   email:
