@@ -49,7 +49,7 @@ import { AdminContactFormComponent } from './admin/admin-contact-form/admin-cont
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 import { Home2Component } from './client/home-2/home-2.component';
- 
+
 
 // const firebaseAuthConfig = {
 //   provider: AuthProviders.Google,
