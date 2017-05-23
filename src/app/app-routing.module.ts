@@ -5,29 +5,30 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 
 
-// theme 1
+// main - entry component
+import { AppComponent } from './app.component';
+import { Page404Component } from './page-404/page-404.component';
+
+// client-pages
 import { HomeComponent } from './client/home/home.component';
 
-// theme 2
-import { Home2Component } from './client/home-2/home-2.component';
+// admin-pages
+import { DashboardComponent } from './admin/admin-pages/dashboard/dashboard.component';
+import { LoginComponent } from './admin/admin-pages/login/login.component';
+import { ProsforesComponent } from './admin/admin-pages/prosfores/prosfores.component';
+import { ProsforaDetailsComponent } from './admin/admin-pages/prosfora-details/prosfora-details.component';
+import { YpiresiesComponent } from './admin/admin-pages/ypiresies/ypiresies.component';
+import { AdminProductsComponent } from './admin/admin-pages/admin-products/admin-products.component';
+import { AdminSettingsComponent } from './admin/admin-pages/admin-settings/admin-settings.component';
+import { AdminMapComponent } from './admin/admin-pages/admin-map/admin-map.component';
 
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { LoginComponent } from './admin/login/login.component';
-import { Page404Component } from './admin/page-404/page-404.component';
-import { ProsforesComponent } from './admin/prosfores/prosfores.component';
-import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-details.component';
-import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
-import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
 
 
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'home', component: HomeComponent },
 
   { path: 'dashboard', component: DashboardComponent, canActivate : [AuthGuardService] },
@@ -37,7 +38,7 @@ const routes: Routes = [
 
   { path: 'ypiresies', component: YpiresiesComponent, canActivate : [AuthGuardService] },
 
-  { path: 'admin-contact-form', component: AdminContactFormComponent, canActivate : [AuthGuardService] },
+  { path: 'admin-map', component: AdminMapComponent, canActivate : [AuthGuardService] },
 
   { path: 'admin-products', component: AdminProductsComponent, canActivate : [AuthGuardService] },
   { path: 'admin-settings', component: AdminSettingsComponent, canActivate : [AuthGuardService] },

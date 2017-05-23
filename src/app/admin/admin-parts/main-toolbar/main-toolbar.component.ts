@@ -12,7 +12,7 @@ declare const $: any;
   styleUrls: ['./main-toolbar.component.css']
 })
 export class MainToolbarComponent implements OnInit {
-  
+
   isDarkTheme = false;
   user: Observable<firebase.User>;
 
@@ -38,6 +38,7 @@ export class MainToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   // LOGOUT METHOD

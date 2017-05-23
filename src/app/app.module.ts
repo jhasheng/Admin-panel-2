@@ -29,32 +29,35 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { LoginComponent } from './admin/login/login.component';
-import { Page404Component } from './admin/page-404/page-404.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { Page404Component } from './page-404/page-404.component';
 
 
-import { ProsforesComponent } from './admin/prosfores/prosfores.component';
-import { DialogAddProsforaComponent } from './admin/dialog-add-prosfora/dialog-add-prosfora.component';
-import { DialogeDeleteProsforaComponent } from './admin/dialoge-delete-prosfora/dialoge-delete-prosfora.component';
-import { NavigationMenuLeftComponent } from './admin/navigation-menu-left/navigation-menu-left.component';
-import { MainToolbarComponent } from './admin/main-toolbar/main-toolbar.component';
-import { ProsforesTableComponent } from './admin/prosfores-table/prosfores-table.component';
-import { ProsforaDetailsComponent } from './admin/prosfora-details/prosfora-details.component';
-import { YpiresiesComponent } from './admin/ypiresies/ypiresies.component';
 
+// admin-pages
+import { DashboardComponent } from './admin/admin-pages/dashboard/dashboard.component';
+import { LoginComponent } from './admin/admin-pages/login/login.component';
+import { ProsforesComponent } from './admin/admin-pages/prosfores/prosfores.component';
+import { ProsforaDetailsComponent } from './admin/admin-pages/prosfora-details/prosfora-details.component';
+import { YpiresiesComponent } from './admin/admin-pages/ypiresies/ypiresies.component';
+import { AdminProductsComponent } from './admin/admin-pages/admin-products/admin-products.component';
+import { AdminSettingsComponent } from './admin/admin-pages/admin-settings/admin-settings.component';
+
+ 
+
+// admin-parts
+import { DialogComponent } from './admin/admin-parts/dialog/dialog.component';
+import { DialogAddProsforaComponent } from './admin/admin-parts/dialog-add-prosfora/dialog-add-prosfora.component';
+import { DialogeDeleteProsforaComponent } from './admin/admin-parts/dialoge-delete-prosfora/dialoge-delete-prosfora.component';
+import { NavigationMenuLeftComponent } from './admin/admin-parts/navigation-menu-left/navigation-menu-left.component';
+import { MainToolbarComponent } from './admin/admin-parts/main-toolbar/main-toolbar.component';
+import { ProsforesTableComponent } from './admin/admin-parts/prosfores-table/prosfores-table.component';
+
+
+
+// client-pages
 import { HomeComponent } from './client/home/home.component';
-import { AdminContactFormComponent } from './admin/admin-contact-form/admin-contact-form.component';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
-import { Home2Component } from './client/home-2/home-2.component';
+import { AdminMapComponent } from './admin/admin-pages/admin-map/admin-map.component';
 
-
-// const firebaseAuthConfig = {
-//   provider: AuthProviders.Google,
-//   method: AuthMethods.Popup
-// };
 
 
 
@@ -74,10 +77,9 @@ import { Home2Component } from './client/home-2/home-2.component';
     ProsforaDetailsComponent,
     YpiresiesComponent,
     HomeComponent,
-    AdminContactFormComponent,
     AdminProductsComponent,
     AdminSettingsComponent,
-    Home2Component
+    AdminMapComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@ export class NavigationMenuLeftComponent implements OnInit {
       icon : 'shoping_basket'
     },
     {
-      name: 'Επικοινωνία',
+      name: 'Χάρτης',
       link : '/admin-contact-form',
       icon : 'map'
     },

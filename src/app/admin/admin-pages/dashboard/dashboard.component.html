@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100%;">
+<!--<div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100%;">
 
 
   <md-sidenav-container>
@@ -91,4 +91,42 @@
     <md-icon>add</md-icon>
   </button>
 
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="main-container" fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme" style="width:100vw;">
+
+  <!-- main toolbar top -->
+  <app-main-toolbar></app-main-toolbar> 
+
+  <md-sidenav-container>
+
+    <md-sidenav mode="side" opened>
+
+      <!-- menu left heare -->
+      <app-navigation-menu-left></app-navigation-menu-left>
+
+    </md-sidenav>
+
+    <!-- Table for prosfores -->
+    <!--<app-prosfores-table></app-prosfores-table>-->
+    <h3>Dashboard</h3>
+
+  </md-sidenav-container>
+
 </div>
+
+
+

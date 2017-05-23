@@ -3,13 +3,15 @@ import {FormControl, FormsModule, FormGroup, ReactiveFormsModule } from '@angula
 import 'rxjs/add/operator/startWith';
 
 
-@Component({
-  selector: 'app-admin-contact-form',
-  templateUrl: './admin-contact-form.component.html',
-  styleUrls: ['./admin-contact-form.component.css'],
-})
-export class AdminContactFormComponent implements OnInit {
 
+@Component({
+  selector: 'app-admin-map',
+  templateUrl: './admin-map.component.html',
+  styleUrls: ['./admin-map.component.css']
+})
+export class AdminMapComponent implements OnInit {
+
+  
   isDarkTheme: any = false;
   loadComplete: boolean = false;
 
@@ -226,7 +228,7 @@ export class AdminContactFormComponent implements OnInit {
         .startWith(null)
         .map(name => this.filterCountries(name));
 
-  } 
+  }
 
   filterCountries(val: string) {
     return val ? this.counties.filter(s => new RegExp(`^${val}`, 'gi').test(s))

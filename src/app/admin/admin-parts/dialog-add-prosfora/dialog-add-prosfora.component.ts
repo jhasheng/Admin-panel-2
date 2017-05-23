@@ -1,8 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
-import { FirebaseService } from '../../services/firebase.service';
+import { FirebaseService } from '../../../services/firebase.service';
 
 declare const $: any;
+
+
 
 @Component({
   selector: 'app-dialog-add-prosfora',

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MdIconRegistry, MdDialog, MdDialogRef } from '@angular/material';
 
 import { Router } from '@angular/router';
-import { FirebaseService } from '../../services/firebase.service';
+import { FirebaseService } from '../../../services/firebase.service';
 
 // dialogs
-import { DialogAddProsforaComponent } from '../../admin/dialog-add-prosfora/dialog-add-prosfora.component';
-import { DialogeDeleteProsforaComponent } from '../../admin/dialoge-delete-prosfora/dialoge-delete-prosfora.component';
+import { DialogAddProsforaComponent } from '../../admin-parts/dialog-add-prosfora/dialog-add-prosfora.component';
+import { DialogeDeleteProsforaComponent } from '../../admin-parts/dialoge-delete-prosfora/dialoge-delete-prosfora.component';
+
+
 
 declare const $: any;
 
@@ -66,7 +68,7 @@ export class ProsforesTableComponent implements OnInit {
 
         console.log(prosfora);
 
-        let prosfora_obj = {
+        const prosfora_obj = {
           title : prosfora.title,
           description: prosfora.description,
           price: prosfora.price,

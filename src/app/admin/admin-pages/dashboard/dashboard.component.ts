@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdIconRegistry, MdDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { DialogComponent } from '../../dialog/dialog.component';
+import { DialogComponent } from '../../admin-parts/dialog/dialog.component';
 
 import {OverlayContainer} from '@angular/material';
 
