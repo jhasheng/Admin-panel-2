@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-
+import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';

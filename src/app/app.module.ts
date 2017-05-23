@@ -57,6 +57,7 @@ import { ProsforesTableComponent } from './admin/admin-parts/prosfores-table/pro
 // client-pages
 import { HomeComponent } from './client/home/home.component';
 import { AdminMapComponent } from './admin/admin-pages/admin-map/admin-map.component';
+import { MediaSliderComponent } from './client/client-parts/media-slider/media-slider.component';
 
 
 
@@ -79,7 +80,8 @@ import { AdminMapComponent } from './admin/admin-pages/admin-map/admin-map.compo
     HomeComponent,
     AdminProductsComponent,
     AdminSettingsComponent,
-    AdminMapComponent
+    AdminMapComponent,
+    MediaSliderComponent
   ],
   imports: [
     BrowserModule,

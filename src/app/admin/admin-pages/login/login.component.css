@@ -4,3 +4,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
+#btn-loggin-with-google{
+  cursor: pointer;
+}
