@@ -32,7 +32,7 @@ export class NavigationMenuLeftComponent implements OnInit {
     },
     {
       name: 'Χάρτης',
-      link : '/admin-contact-form',
+      link : '/admin-map',
       icon : 'map'
     },
     {

@@ -1,4 +1,4 @@
-<md-nav-list style="width:250px;">
+<md-nav-list style="width:200px; overflow: hidden;">
   <md-list-item *ngFor="let menulist of menulists" (click)="selectedMenuItem(menulist)">
     <md-icon md-list-icon style="color:#494949; margin-right:18px;">{{menulist.icon}}</md-icon>
     <a routerLink="{{menulist.link}}">{{menulist.name}} </a>

@@ -42,7 +42,7 @@ import { YpiresiesComponent } from './admin/admin-pages/ypiresies/ypiresies.comp
 import { AdminProductsComponent } from './admin/admin-pages/admin-products/admin-products.component';
 import { AdminSettingsComponent } from './admin/admin-pages/admin-settings/admin-settings.component';
 
- 
+
 
 // admin-parts
 import { DialogComponent } from './admin/admin-parts/dialog/dialog.component';

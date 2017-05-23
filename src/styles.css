@@ -6,6 +6,12 @@
 /*@import "../node_modules/ng2-flex-layout/dist/ng2-flex-layout.css";*/
 
 
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0px;
 
@@ -25,7 +31,7 @@ md-sidenav-container{
 }
 
 md-sidenav {
-  max-width: 320px;
+  max-width: 250px;
   overflow-y: none;
 }
 

@@ -113,16 +113,24 @@
 
   <md-sidenav-container>
 
-    <md-sidenav mode="side" opened>
+    <md-sidenav #sidenav  mode="side" opened class="example-sidenav">
 
       <!-- menu left heare -->
       <app-navigation-menu-left></app-navigation-menu-left>
 
     </md-sidenav>
 
+    <h3>Dashboard</h3>
+
+    <div class="example-sidenav-content">
+      <button md-button (click)="sidenav.toggle()"> 
+        Open sidenav
+      </button>
+    </div>
+
     <!-- Table for prosfores -->
     <!--<app-prosfores-table></app-prosfores-table>-->
-    <h3>Dashboard</h3>
+    
 
   </md-sidenav-container>
 
